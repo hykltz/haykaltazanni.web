@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>haykaltazanni</title>
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dynalight&family=Limelight&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #081021;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 90px;
+      
+    }
+
+    nav .logo {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 45px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #8ab8ff;
+      transition: .3s;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      color: #1fa0ff;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 90px;
+      min-height: 80vh;
+    }
+
+    .text-box {
+      max-width: 550px;
+      animation: fadeSlideLeft 1.3s ease;
+    }
+
+    .text-box h1 {
+      font-size: 60px;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .text-box h2 {
+      font-size: 34px;
+      color: #1495ff;
+      margin: 10px 0 0 0;
+    }
+
+    .text-box p {
+      margin-top: 20px;
+      color: #abc4e2;
+      line-height: 1.7;
+    }
+
+    .btns {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn1 {
+      background: #1495ff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      transition: .3s;
+    }
+
+    .btn1:hover {
+      background: #0b75cc;
+    }
+
+    .btn2 {
+      border: 2px solid #1495ff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #1495ff;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .btn2:hover {
+      background: #09a5ec8e;
+      color: white;
+    }
+
+    .hero-img img {
+      width: 420px;
+      border-radius: 10px;
+      animation: fadeSlideRight 1.3s ease;
+      background-color: #1b2838;
+    }
+    .about-card {
+      background: #0e1a33;
+      max-width: 800px;
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      animation: fadeUp .7s ease;
+    }
+
+    .about-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #1495ff;
+    }
+
+    #about h3 {
+      font-family: "Limelight", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    #about ul {
+      list-style: none;  
+      padding-left: 0;    
+    }
+
+    #about h2 {
+      font-family: "Limelight", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+   
+    #about {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s ease;
+    }
+
+    #about.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .wa-float {
+      position: fixed;
+      width: 45px;
+      height: 45px;
+      bottom: 35px;
+      right: 45px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: 0.3s ease;
+    }
+
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      background-color: #1ebe57;
+    }
+
+
+    .wa-icon {
+      width: 30px;
+      height: 30px;
+    }
+    
+
+
+    @keyframes fadeSlideLeft {
+      0% { opacity: 0; transform: translateX(-40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeSlideRight {
+      0% { opacity: 0; transform: translateX(40px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 25px 40px; }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+      }
+
+      .text-box h1 { font-size: 45px; }
+      .text-box h2 { font-size: 26px; }
+
+      .hero-img img { width: 320px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">haykal.</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="games.html">gamers</a></li>
+      <li><a href="cool.png">cool</a></li>
+     
+    </ul>
+  </nav>
+
+  <section class="hero">
+
+    <div class="text-box">
+      <h1>Hi, I'm haykal</h1>
+      <h2>mahasiswa</h2>
+
+      <p>
+        Education is not just going to school and getting a degree. But, it is also about expanding knowledge and absorbing life sciences.
+      </p>
+
+      <div class="btns">
+        <a class="btn1" href="https://wa.me/6282114165586">Hire Me</a>
+        <a class="btn2" href="https://instagram.com/hykltz">Let's Talk</a>
+      </div>
+    </div>
+
+    <div class="hero-img">
+      <img src="profil.jpeg" alt="Profile">
+
+    </div>
+
+  </section>
+  <script>
+      document.querySelector('a[href="#about"]').addEventListener("click", function () {
+      setTimeout(() => {
+      document.getElementById("about").classList.add("show");
+        }, 200);
+        });
+  </script>
+<section id="about" class="about-section" style="padding:60px 20px; max-width:900px; margin:auto; color:white;">
+      <div class="about-card">
+        <img src="cool.png" alt="Foto Profil" class="about-photo">
+        <h2 style="font-size:32px; margin-bottom:10px;">Tentang saya</h2>
+      <p style="line-height:1.5; font-size:16px; color:#f2f3f7;">
+            Selamat datang di website pribadi saya! Situs ini dibuat untuk membagikan informasi,
+          aktivitas, kreativitas, dan perjalanan saya dalam belajar serta mengembangkan diri.
+          Saya percaya bahwa setiap orang memiliki cerita unik dan saya berharap halaman ini dapat
+          menjadi tempat untuk berbagi inspirasi dan pengalaman.
+      </p>
+      <div class="bio-grid">
+        <div class="bio-item">
+        <h3>👤 Biodata</h3>
+        <p>
+          <b>Nama:</b> M.Haykal Tazanni</p>
+        <p>
+          <b>Umur:</b> 19 tahun</p>
+        <p>
+          <b>Status:</b> Mahasiswa</p>
+        </div>
+      <div class="bio-item">
+      <h3>🎯 Keahlian</h3>
+        <ul>
+          <li>HTML, CSS</li>
+          <li>English dasar</li>
+          <li>Editing foto & video</li>
+          <li>Dasar C++</li>
+          </ul>
+        </div>
+      <div class="bio-item">
+        <h3>🔥 Hobi</h3>
+        <ul>
+          <li>Bermain game</li>
+          <li>Mendengarkan musik</li>
+          <li>Ngopi & chill</li>
+        </ul>
+      </div>
+      </div>
+  </section>
+      <a href="https://wa.me/6282114165586" class="wa-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="wa-icon">
+      </a>
+</body>
+</html>
